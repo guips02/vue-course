@@ -16,7 +16,7 @@ const buscaInformacoes = async (codigo) => {
 
 watch(codigoUsuario, (novo, antigo) => {
   if (novo <= 0){
-    alert('Codigo invalido');
+    codigoUsuario.value = 0;
   }
 });
 
@@ -38,7 +38,7 @@ watchEffect(async () => {
   </form>
 
   <div class="perfil">
-    <img v-bind:src="pessoa.avatar" alt="Perfil" />
+    <img :src="pessoa.avatar" alt="Perfil" />
     <strong>{{ nomeCompleto }}</strong>
     <span>{{ pessoa.email }}</span>
   </div>
