@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, } from "vue";
+import { ref, onMounted } from "vue";
 
 const pessoas = ref([]);
 
@@ -10,29 +10,30 @@ const buscaInformacoes = async () => {
 };
 
 onMounted(async () => {
-    pessoas.value = await buscaInformacoes()
-})
+  pessoas.value = await buscaInformacoes();
+});
 </script>
 
 <template>
-    <div class="pessoas">
-        <div class="perfil" v-for="pessoa in pessoas" :key="pessoa.id">
-            <h3 style="color: red" v-if="pessoa.first_name === 'George'">Gerente</h3>
-            <h3 style="color: yellow" v-else-if="pessoa.first_name === 'Rachel'">Supervisora</h3>
-            <h3 style="color: blue;" v-else="pessoa.first_name === 'George'">Operacional</h3>
-            <img :src="pessoa.avatar" alt="Perfil" />
-            <strong>{{ pessoa.first_name }}</strong>
-            <span style="font-size: 10px;">{{ pessoa.email }}</span>
-        </div>
+  <div class="pessoas">
+    <div class="perfil" v-for="pessoa in pessoas" :key="pessoa.id">
+      <h3 style="color: red" v-if="pessoa.first_name === 'George'">Gerente</h3>
+      <h3 style="color: yellow" v-else-if="pessoa.first_name === 'Rachel'">
+        Supervisora
+      </h3>
+      <h3 style="color: blue" v-else>Operacional</h3>
+      <img :src="pessoa.avatar" alt="Perfil" />
+      <strong>{{ pessoa.first_name }}</strong>
+      <span style="font-size: 10px" v-email="pessoa.email"></span>
     </div>
+  </div>
 </template>
 
 <style scoped>
 .pessoas {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
-
 .perfil {
   width: 150px;
   text-align: center;

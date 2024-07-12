@@ -1,14 +1,10 @@
 <script setup>
-const nome = "Guilherme";
-const subtitulo = '<p style:"color:silver">Tutoriais Vue, .NET</p>';
+const nome = "Pablo Codes";
 </script>
 
 <template>
   <div>
     <h1 class="titulo">{{ nome }}</h1>
-    <span v-html="subtitulo"></span>
-    <span v-text="subtitulo"></span>
-    <span>{{ subtitulo }}</span>
   </div>
 </template>
 
