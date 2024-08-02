@@ -1,18 +1,18 @@
 <script setup>
 import Cabecalho from "./components/Cabecalho.vue";
+import ListaUsuario from "./components/ListaUsuario.vue";
 import Usuario from "./components/Usuario.vue";
-import ListaUsuario from "@/components/ListaUsuario.vue"
 </script>
 
 <template>
-  <Navbar v-once />
+  <NavBar v-once></NavBar>
   <header>
     <Cabecalho />
   </header>
 
   <main>
     <!-- <Usuario></Usuario> -->
-    <ListaUsuario />
+    <ListaUsuario></ListaUsuario>
   </main>
 </template>
 
