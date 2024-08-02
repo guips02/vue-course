@@ -5,7 +5,7 @@ import Usuario from "./components/Usuario.vue";
 </script>
 
 <template>
-  <NavBar v-once></NavBar>
+  <Navbar v-once></Navbar>
   <header>
     <Cabecalho />
   </header>
