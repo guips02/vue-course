@@ -1,4 +1,6 @@
 <script setup>
+import Aviso from './Aviso.vue'
+
 defineProps({
   pessoa: {
     type: Object,
@@ -19,7 +21,8 @@ const emit = defineEmits(['selecao']);
 
 const enviaEmit = (id) => {
   emit('selecao', id);
-}
+};
+
 </script>
 
 <template>
@@ -30,7 +33,9 @@ const enviaEmit = (id) => {
     <button class="botao" @click="enviaEmit(pessoa.id)">
       {{ !selecao ? 'Selecionar' : 'Desmarcar' }}
     </button>
+    <Aviso></Aviso>
   </div>
+
 </template>
 
 <style scoped>
